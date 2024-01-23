@@ -9,12 +9,12 @@ const port = process.env.PORT || 3000;
 
 const router = express.Router()
 
-router.get((req, res) => {
+router.get('/', (req, res) => {
   const { filter } = req.query
   res.send(listUsers(filter))
 })
 
-router.post((req, res) => {
+router.post('/', (req, res) => {
   const { first_name, last_name, email, gender } = req.body
   res.send(addUser(first_name, last_name, email, gender))
 })

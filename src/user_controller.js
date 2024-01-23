@@ -123,6 +123,7 @@ export const relationshipDistance = (id1, id2) => {
         userConnections[id] = connections
     )
 
+    // Return the number itself since its easier to manipulate if necessary
     return shortestDistance(userConnections, id1, id2)
 }
 
