@@ -122,7 +122,6 @@ export const relationshipDistance = (id1, id2) => {
     listUsers().forEach(({ id, connections }) =>
         userConnections[id] = connections
     )
-    console.log(userConnections)
 
     return shortestDistance(userConnections, id1, id2)
 }
