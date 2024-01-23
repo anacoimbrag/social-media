@@ -41,7 +41,7 @@ export const addUser = (first_name, last_name, email, gender, connections) => {
         throw new Error('User already exists!')
 
     const newUser = {
-        id: users.length + 1,
+        id: users.length + 1, // ideally this should be randomly generated or come from a gov social service
         first_name,
         last_name,
         email,
