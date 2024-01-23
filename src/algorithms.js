@@ -1,9 +1,14 @@
-'use strict'
-
-export const shortestDistance = (graph, start, destination) => {
+/**
+ * Calculate the shortest connection distance between two users based on Djikstra algorithm
+ * @param {Object} connections 
+ * @param {Number} start 
+ * @param {Number} destination 
+ * @returns 
+ */
+export const shortestDistance = (connections, start, destination) => {
     let distances = {}
     const visited = []
-    const nodes = Object.keys(graph)
+    const nodes = Object.keys(connections)
 
     nodes.forEach(node => {
         distances[node] = node == start ? 0 : Infinity
@@ -14,7 +19,7 @@ export const shortestDistance = (graph, start, destination) => {
 
         visited.push(nextNode)
 
-        for (let connection of graph[nextNode]) {
+        for (let connection of connections[nextNode]) {
             if (!visited.includes(connection)) {
                 const newDistance = distances[nextNode] == Infinity ? 1 : distances[nextNode] + 1
 
