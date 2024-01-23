@@ -1,7 +1,6 @@
 'use strict'
 
 export const shortestDistance = (graph, start, destination) => {
-    console.log('graph', graph)
     let distances = {}
     const visited = []
     const nodes = Object.keys(graph)
